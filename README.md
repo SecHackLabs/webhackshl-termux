@@ -11,12 +11,12 @@ Esta herramienta funciona en Android usando el emulador Termux, otros emuladores
 
 # Instalación.
 
-Sigue los pasos que encontrarás en https://www.securityhacklabs.net/nuestra-herramienta-hacking-para-android
+Sigue los pasos que encontrarás en https://securityhacklabs.net/nuestra-herramienta-hacking-para-android
 
 # Uso de la herramienta
 Teclee en la terminal de termux:</br>
 
-~$ git clone https://github.com/sechacklabs/webhackshl-termux</br>
+~$ git clone https://gitlab.com/sechacklabs/webhackshl-termux.git</br>
 ~$ cd webhackshl-termux</br>
 ~$ python2 webhackshl.py<br>
 
