@@ -1,0 +1,10 @@
+*.pyc
+modules/vulns/lfi.txt
+modules/vulns/sqli.txt
+modules/vulns/rce.txt
+modules/vulns/xss.txt
+modules/sqlopt/output.txt
+Gemfile.lock
+Gemfile
+*.log
+

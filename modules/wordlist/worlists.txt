@@ -1,0 +1,22 @@
+* Links Diccionarios Para FUERZA BRUTA! - WordList Brute Force! 
+
+https://wiki.skullsecurity.org/Passwords 
+http://www.insidepro.com/ 
+https://packetstormsecurity.com/Crackers/wordlists/ 
+http://www.cotse.com/tools/wordlists1.htm 
+http://www.cotse.com/tools/wordlists2.htm 
+ftp://ftp.openwall.com/pub/wordlists/ 
+ftp://ftp.cerias.purdue.edu/pub/dict/wordlists/ 
+ftp://ftp.zedz.net/pub/crypto/wordlists/ 
+http://contest-2010.korelogic.com/wordlists.html 
+http://www.leetupload.com/dbindex2/index.php?dir=Word%20Lists/ 
+ftp://ftp.funet.fi/pub/unix/security/dictionaries/ 
+http://wordlist.aspell.net/
+
+Recopilado por Security Hack Labs Team 
+
+Email: shl.contacto@gmail.com
+Blog: https://securityhacklabs.net
+Twitter: @SecurityHackLab
+Facebook: https://fb.com/SecHackLabs
+
