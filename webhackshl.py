@@ -54,7 +54,7 @@ adjust_to_correct_appdir()
 
 os.system("cp joomlavs/Gemfile .")
 
-parser = argparse.ArgumentParser(prog='webhackshl.py',usage='python2 webhackshl.py',description='WebHackSHL es un conjunto de herramientas desarrollado por Security Hack Labs, para realizar auditorias de seguridad web desde basicas hasta avanzadas, diseñado especialmente para sistemas ArchLinux y Debian o basados en los mismos. Cualquier problema con la herramienta puede reportarlo en https://github.com/SecHackLabs/webhackshl/issues o en https://www.foro.securityhacklabs.net/viewforum.php?f=40.')
+parser = argparse.ArgumentParser(prog='webhackshl.py',usage='python2 webhackshl.py',description='WebHackSHL es un conjunto de herramientas desarrollado por Security Hack Labs, para realizar auditorias de seguridad web desde basicas hasta avanzadas, diseñado especialmente para sistemas ArchLinux y Debian o basados en los mismos. Cualquier problema con la herramienta puede reportarlo en https://gitlab.com/SecHackLabs/webhackshl/issues o en https://www.foro.securityhacklabs.net/viewforum.php?f=40.')
 parser.add_argument("-u", "--update", help="Actualiza WebHackSHL a la mas version mas reciente.", action="store_true")
 parser.add_argument("-ut", "--utools", help="Actualiza todas las herramientas Necesitadas por WebHackSHL en tu SO.", action="store_true")
 parser.add_argument("-v", "--version", help="Version de WebHackSHL", action="store_true")

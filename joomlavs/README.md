@@ -1,4 +1,4 @@
-# joomlavs [![Build Status](https://travis-ci.org/rastating/joomlavs.svg?branch=master)](https://travis-ci.org/rastating/joomlavs) [![Code Climate](https://codeclimate.com/github/rastating/joomlavs/badges/gpa.svg)](https://codeclimate.com/github/rastating/joomlavs) [![Dependency Status](https://gemnasium.com/badges/github.com/rastating/joomlavs.svg)](https://gemnasium.com/github.com/rastating/joomlavs)
+# joomlavs [![Build Status](https://travis-ci.org/rastating/joomlavs.svg?branch=master)](https://travis-ci.org/rastating/joomlavs) [![Code Climate](https://codeclimate.com/github/rastating/joomlavs/badges/gpa.svg)](https://codeclimate.com/github/rastating/joomlavs) [![Dependency Status](https://gemnasium.com/badges/gitlab.com/rastating/joomlavs.svg)](https://gemnasium.com/gitlab.com/rastating/joomlavs)
 A black box, Ruby powered, Joomla vulnerability scanner
 
 ## What is it?
@@ -19,7 +19,7 @@ You should have received a copy of the GNU General Public License along with thi
 JoomlaVS has so far only been tested on Debian, but the installation process should be similar across most operating systems.
 
 1. Ensure Ruby [2.2.6 or above] is installed on your system
-2. Clone the source code using ```git clone https://github.com/rastating/joomlavs.git```
+2. Clone the source code using ```git clone https://gitlab.com/rastating/joomlavs.git```
 3. Install bundler and required gems using ```sudo gem install bundler && bundle install```
 
 ## Troubleshooting Installation

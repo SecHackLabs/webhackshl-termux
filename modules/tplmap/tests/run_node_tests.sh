@@ -45,7 +45,7 @@ function run_webserver()
     npm install nunjucks
     # Install deprecated dustjs-helpers to have an exploitable
     # if function.
-    # See https://github.com/linkedin/dustjs-helpers/pull/110 
+    # See https://gitlab.com/linkedin/dustjs-helpers/pull/110 
     npm install dustjs-linkedin@2.6
     npm install dustjs-helpers@1.5.0
     npm install dot

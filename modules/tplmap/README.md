@@ -145,7 +145,7 @@ Burp Suite Plugin
 See [burp_extension/README.md](burp_extension/README.md).
 
 [10]: http://blog.portswigger.net/2015/08/server-side-template-injection.html
-[3]: https://github.com/epinna/tplmap/issues/9
+[3]: https://gitlab.com/epinna/tplmap/issues/9
 [4]: http://disse.cting.org/2016/08/02/2016-08-02-sandbox-break-out-nunjucks-template-engine
 [1]: https://artsploit.blogspot.co.uk/2016/08/pprce2.html
 [11]: http://jinja.pocoo.org/
