@@ -114,11 +114,11 @@ def installall(DISTRO):
                 && cpan install Net::IP Net::DNS Net::Netmask XML::Writer \
                 && cpan -f String::Random \
                 && cd modules/tplmap/ && git pull \
-                && git clone https://gitlab.com/sqlmapproject/sqlmap $HOME/.sqlmap \
-                && git clone https://gitlab.com/fwaeytens/dnsenum $HOME/.dnsenum \
-                && git clone https://gitlab.com/sullo/nikto $HOME/.nikto \
-                && git clone https://gitlab.com/wpscanteam/wpscan $HOME/.wpscan \
-                && git clone https://gitlab.com/urbanadventurer/whatweb $HOME/.whatweb \
+                && git clone https://github.com/sqlmapproject/sqlmap $HOME/.sqlmap \
+                && git clone https://github.com/fwaeytens/dnsenum $HOME/.dnsenum \
+                && git clone https://github.com/sullo/nikto $HOME/.nikto \
+                && git clone https://github.com/wpscanteam/wpscan $HOME/.wpscan \
+                && git clone https://github.com/urbanadventurer/whatweb $HOME/.whatweb \
                 && cd $HOME/.wpscan && gem install bundler && bundle install --without test \
                 ")
         if correctinstall==0:
