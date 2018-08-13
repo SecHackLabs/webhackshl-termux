@@ -111,7 +111,8 @@ def installall(DISTRO):
                 && touch $PREFIX/etc/hosts \
                 && pip3 install fierce \
                 && pip2 install requests flask \
-                && cpan install Net::IP Net::DNS Net::Netmask XML::Writer String::Random \
+                && cpan install Net::IP Net::DNS Net::Netmask XML::Writer \
+                && cpan -f String::Random \
                 && cd modules/tplmap/ && git pull \
                 && git clone https://gitlab.com/sqlmapproject/sqlmap $HOME/.sqlmap \
                 && git clone https://gitlab.com/fwaeytens/dnsenum $HOME/.dnsenum \
