@@ -70,7 +70,8 @@ def updatetools(DISTRO):
         installcorrect=os.system("pkg install util-linux perl clang  nmap make ruby ruby-dev libxslt libxslt-dev git curl tor python python2 libyaml-dev libandroid-glob libandroid-glob-dev \
          && pip3 install fierce -U \
          && pip2 install requests flask -U \
-         && cpan install Net::IP Net::DNS Net::Netmask XML::Writer String::Random \
+         && cpan install Net::IP Net::DNS Net::Netmask XML::Writer \
+         && cpan -f String::Random \
          && cd $PWD/modules/tplmap/ && git pull \
          && cd joomlavs/ && git pull \
          && cd $HOME/.sqlmap && git pull \
