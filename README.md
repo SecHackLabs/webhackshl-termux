@@ -11,7 +11,7 @@ Esta herramienta funciona en Android usando el emulador Termux, otros emuladores
 
 # Instalación.
 
-Sigue los pasos que encontrarás en https://securityhacklabs.net/nuestra-herramienta-hacking-para-android
+Sigue los pasos que encontrarás en https://securityhacklabs.net/articulo/nuestra-herramienta-de-hacking-para-android
 
 # Uso de la herramienta
 Teclee en la terminal de termux:</br>
@@ -32,13 +32,11 @@ Si usted ha descargado e instalado la herramienta en su equipo usando el script 
 
 # Soporte y contacto.
 
-Telegram: https://telegram.me/SecHackLabs</br>
-Sala Riot: https://chat.securityhacklabs.net/#/room/#sechacklabs:disroot.org</br>
-IRC: https://webchat.freenode.net/?channels=SecHackLabs</br>
+Chat Discord: https://chat.securityhacklabs.net</br>
 Blog: https://securityhacklabs.net</br>
 Foro: https://foro.securityhacklabs.net/</br>
 
 # Capturas de pantalla.
 
-![Alt text](https://i.imgur.com/0tAFi0k.png "Optional title")
-![Alt text](https://i.imgur.com/y0DeXeA.png "Optional title")
+![Alt text](https://i.imgur.com/0tAFi0k.png "Captura 1")
+![Alt text](https://i.imgur.com/y0DeXeA.png "Captura 2")
