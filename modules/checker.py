@@ -32,7 +32,7 @@ ismap=os.path.isfile(HOME+"/.sqlmap/sqlmap.py")
 isenum=os.path.isfile(HOME+"/.dnsenum/dnsenum.pl")
 isnikto=os.path.isfile(HOME+"/.nikto/program/nikto.pl") #Nikto no tiene soporte para SSL en Android actualmente
 iswhatw=os.path.isfile(HOME+"/.whatweb/whatweb")
-iswp=os.path.isfile(HOME+"/.wpscan/wpscan.rb")
+iswp=os.path.isfile(PREFIX+"/bin/wpscan")
 iscurl=os.path.isfile(PREFIX+"/bin/curl")
 isgit=os.path.isfile(PREFIX+"/bin/git")
 
@@ -108,16 +108,15 @@ def installall(DISTRO):
         cAmarillo("Instalando lo necesario en el sistema...")
         correctinstall=os.system("pkg install util-linux perl clang nmap make ruby ruby-dev libxslt libxslt-dev git curl tor python2 python libyaml-dev libandroid-glob libandroid-glob-dev libffi-dev \
                 && touch $PREFIX/etc/hosts \
-                && pip3 install fierce \
+                && pip3 install fierce sqlmap \
                 && pip2 install requests flask \
                 && cpan -Ti Net::IP Net::DNS Net::Netmask XML::Writer String::Random \
+                && gem install wpscan \
                 && cd modules/tplmap/ && git pull \
-                && git clone https://github.com/sqlmapproject/sqlmap $HOME/.sqlmap \
                 && git clone https://github.com/fwaeytens/dnsenum $HOME/.dnsenum \
                 && git clone https://github.com/sullo/nikto $HOME/.nikto \
                 && git clone https://github.com/wpscanteam/wpscan $HOME/.wpscan \
                 && git clone https://github.com/urbanadventurer/whatweb $HOME/.whatweb \
-                && cd $HOME/.wpscan && gem install bundler && bundle install --without test \
                 ")
         if correctinstall==0:
             print ""
