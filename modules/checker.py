@@ -113,9 +113,9 @@ def installall(DISTRO):
                 && cpan -Ti Net::IP Net::DNS Net::Netmask XML::Writer String::Random \
                 && gem install wpscan \
                 && cd modules/tplmap/ && git pull \
+                && rm -rf $HOME/.dnsenum && rm -rf $HOME/.nikto && rm -rf $HOME/.whatweb \
                 && git clone https://github.com/fwaeytens/dnsenum $HOME/.dnsenum \
                 && git clone https://github.com/sullo/nikto $HOME/.nikto \
-                && git clone https://github.com/wpscanteam/wpscan $HOME/.wpscan \
                 && git clone https://github.com/urbanadventurer/whatweb $HOME/.whatweb \
                 ")
         if correctinstall==0:
