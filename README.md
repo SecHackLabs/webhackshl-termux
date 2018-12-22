@@ -11,7 +11,7 @@ Esta herramienta funciona en Android usando el emulador Termux, otros emuladores
 
 # Instalación.
 
-Sigue los pasos que encontrarás en https://securityhacklabs.net/articulo/nuestra-herramienta-de-hacking-para-android
+Sigue los pasos que encontrarás en https://securityhacklabs.net/articulo/nuestra-herramienta-de-hacking-para-android. <b>Es muy importante que siga todo al pie de la letra y que tenga en cuenta que deberá reintentar la instalación 3 veces cuando el script se lo pregunte.</b>
 
 # Uso de la herramienta
 Teclee en la terminal de termux:</br>
