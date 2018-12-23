@@ -5,9 +5,9 @@ Tplmap assists the exploitation of Code Injection and Server-Side Template Injec
 
 The tool and its test suite are developed to research the SSTI vulnerability class and to be used as offensive security tool during web application penetration tests.
 
-The sandbox break-out techniques came from James Kett's [Server-Side Template Injection: RCE For The Modern Web App][10] and other public researches [\[1\]][1] [\[2\]][2] and original works to extend this tool capabilities [\[3\]][3] [\[4\]][4].
+The sandbox break-out techniques came from James Kett's [Server-Side Template Injection: RCE For The Modern Web App][10], other public researches [\[1\]][1] [\[2\]][2], and original contributions to this tool [\[3\]][3] [\[4\]][4].
 
-It fully compromises the server exploiting several code context and blind injection scenarios. It also supports _eval()_-like code injections in Python, Ruby, PHP, Java and generic unsandboxed template engines.
+It can exploit several code context and blind injection scenarios. It also supports _eval()_-like code injections in Python, Ruby, PHP, Java and generic unsandboxed template engines.
 
 Server-Side Template Injection
 ------------------------------
@@ -56,7 +56,7 @@ Tplmap is able to detect and exploit SSTI in a range of template engines to get 
 
 ```
 $ ./tplmap.py -u 'http://www.target.com/page?name=John'
-[+] Tplmap 0.3
+[+] Tplmap 0.5
     Automatic Server-Side Template Injection Detection and Exploitation Tool
 
 [+] Testing if GET parameter 'name' is injectable
@@ -96,7 +96,7 @@ Use `--os-shell` option to launch a pseudo-terminal on the target.
 
 ```
 $ ./tplmap.py --os-shell -u 'http://www.target.com/page?name=John'
-[+] Tplmap 0.3
+[+] Tplmap 0.5
     Automatic Server-Side Template Injection Detection and Exploitation Tool
 
 [+] Run commands on the operating system.
@@ -114,14 +114,14 @@ Supported template engines
 
 Tplmap supports over 15 template engines, unsandboxed template engines and generic _eval()_-like injections.
 
-| Template engine        | Remote Command Execution |  Blind | Code evaluation | File read | File write |
-|------------------------|-------|-------------------|-----------------|-----------|------------|
+| Engine                 | Remote Command Execution |  Blind | Code evaluation | File read | File write |
+|------------------------|---------------|-------------------|-----------------|-----------|------------|
 | Mako                   | ✓ |  ✓                | Python          |  ✓        |  ✓         |
 | Jinja2                 | ✓ |  ✓                | Python          |  ✓        |  ✓         |
 | Python (code eval)     | ✓ |  ✓                | Python          |  ✓        |  ✓         |
 | Tornado                | ✓ |  ✓                | Python          |  ✓        |  ✓         |
 | Nunjucks               | ✓ |  ✓                | JavaScript      |  ✓        |  ✓         |
-| Jade                   | ✓ |  ✓                | JavaScript      |  ✓        |  ✓         |
+| Pug                    | ✓ |  ✓                | JavaScript      |  ✓        |  ✓         |
 | doT                    | ✓ |  ✓                | JavaScript      |  ✓        |  ✓         |
 | Marko                  | ✓ |  ✓                | JavaScript      |  ✓        |  ✓         |
 | JavaScript (code eval) | ✓ |  ✓                | JavaScript      |  ✓        |  ✓         |
@@ -132,9 +132,10 @@ Tplmap supports over 15 template engines, unsandboxed template engines and gener
 | ERB                    | ✓ |  ✓                | Ruby            |  ✓        |  ✓         |
 | Smarty (unsecured)     | ✓ |  ✓                | PHP             |  ✓        |  ✓         |
 | PHP (code eval)        | ✓ |  ✓                | PHP             |  ✓        |  ✓         |
+| Twig (<=1.19)          | ✓ |  ✓                | PHP             |  ✓        |  ✓         |
 | Freemarker             | ✓ |  ✓                | ×               |  ✓        |  ✓         |
 | Velocity               | ✓ |  ✓                | ×               |  ✓        |  ✓         |
-| Twig                   | × | ×                 | ×               | ×         | ×          |
+| Twig (>1.19)           | × | ×                 | ×               | ×         | ×          |
 | Smarty (secured)       | × | ×                 | ×               | ×         | ×          |
 | Dust (> dustjs-helpers@1.5.0) | × | ×          | ×               | ×         | ×          |
 
@@ -145,7 +146,7 @@ Burp Suite Plugin
 See [burp_extension/README.md](burp_extension/README.md).
 
 [10]: http://blog.portswigger.net/2015/08/server-side-template-injection.html
-[3]: https://gitlab.com/epinna/tplmap/issues/9
+[3]: https://github.com/epinna/tplmap/issues/9
 [4]: http://disse.cting.org/2016/08/02/2016-08-02-sandbox-break-out-nunjucks-template-engine
 [1]: https://artsploit.blogspot.co.uk/2016/08/pprce2.html
 [11]: http://jinja.pocoo.org/

@@ -41,4 +41,4 @@ Exploitation feature is not implemented, use Tplmap CLI.
 
 The `--injection-tag` option is also not available, because this extension follows Burp's Insertion Point setting.
 
-If you need the `--injection-tag` option, you can use [Scan manual insertion point](https://gitlab.com/ClementNotin/burp-scan-manual-insertion-point) extension.
+If you need the `--injection-tag` option, you can use [Scan manual insertion point](https://github.com/ClementNotin/burp-scan-manual-insertion-point) extension.

@@ -8,7 +8,7 @@ sys.path.insert(1, os.path.join(sys.path[0], '..'))
 from plugins.engines.smarty import Smarty
 from core.channel import Channel
 from core.checks import detect_template_injection
-from basetest import BaseTest
+from basetest import BaseTest, EXTRA_DOWNLOAD
 
 class SmartyUnsecuredTest(unittest.TestCase, BaseTest):
 
@@ -41,8 +41,8 @@ class SmartyUnsecuredTest(unittest.TestCase, BaseTest):
         'reverse_shell': True
     }
 
-    url = 'http://127.0.0.1:15002/smarty-3.1.29-unsecured.php?inj=*&tpl=%s'
-    url_blind = 'http://127.0.0.1:15002/smarty-3.1.29-unsecured.php?inj=*&tpl=%s&blind=1'
+    url = 'http://127.0.0.1:15002/smarty-3.1.32-unsecured.php?inj=*&tpl=%s'
+    url_blind = 'http://127.0.0.1:15002/smarty-3.1.32-unsecured.php?inj=*&tpl=%s&blind=1'
     plugin = Smarty
 
     blind_tests = [
@@ -91,6 +91,9 @@ class SmartyUnsecuredTest(unittest.TestCase, BaseTest):
 
         obj, data = self._get_detection_obj_data(self.url % '')
         self.assertEqual(data, self.expected_data)
+
+        if not EXTRA_DOWNLOAD:
+            return
 
         # Normal ASCII file
         readable_file = '/etc/resolv.conf'

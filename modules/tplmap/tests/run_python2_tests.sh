@@ -1,7 +1,7 @@
 #!/bin/bash -e
 
-INSTANCE_NAME="tplmap-py"
-IMAGE_NAME="tplmap-py-img"
+INSTANCE_NAME="tplmap-py2"
+IMAGE_NAME="tplmap-py2-img"
 PORT=15001
 
 echo "Exposed testing APIs:
@@ -28,6 +28,6 @@ until $(curl --output /dev/null --silent --head http://localhost:$PORT/); do
 done
 
 # Launch python engines tests
-docker exec -it $INSTANCE_NAME python -m unittest discover -v . 'test_channel*.py'
+docker exec -it $INSTANCE_NAME python -m unittest discover -v . 'test_py_*.py'
 
 docker stop $INSTANCE_NAME

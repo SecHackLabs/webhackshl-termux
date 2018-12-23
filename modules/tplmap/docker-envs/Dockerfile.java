@@ -1,13 +1,19 @@
-FROM gradle:latest
+FROM gradle:4.10.2-jdk8
 
-WORKDIR /tests
-COPY tests/env_java_tests/spark-app .
+USER root
+
+RUN apt-get update && apt-get install --upgrade dnsutils python-pip -y
+RUN pip install requests PyYAML
+
+COPY tests/env_java_tests/spark-app/ /apps/tests/env_java_tests/spark-app/
+WORKDIR /apps/tests/
 
 # install dependencies
-USER root
-RUN sed -ie 's/id "com\.github\.johnrengelman\.shadow".*//' build.gradle && \
+RUN cd env_java_tests/spark-app/ && sed -ie 's/id "com\.github\.johnrengelman\.shadow".*//' build.gradle && \
     gradle classes
+
+COPY . /apps/
 
 EXPOSE 15003
 
-CMD ["gradle", "run"]
+CMD cd env_java_tests/spark-app/ && gradle run
