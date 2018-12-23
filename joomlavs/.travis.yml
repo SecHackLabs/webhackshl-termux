@@ -1,0 +1,11 @@
+language: ruby
+rvm:
+  - 2.4.4
+  - 2.5.1
+before_install:
+  - "echo 'gem: --no-ri --no-rdoc' > ~/.gemrc"
+script:
+  - bundle exec rspec
+branches:
+  except:
+    - gh-pages

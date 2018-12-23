@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # This file is part of JoomlaVS.
 
 # JoomlaVS is free software: you can redistribute it and/or modify
@@ -12,6 +14,9 @@
 
 # You should have received a copy of the GNU General Public License
 # along with JoomlaVS.  If not, see <http://www.gnu.org/licenses/>.
+
+require 'coveralls'
+Coveralls.wear!
 
 require_relative '../lib/scanner'
 require_relative '../lib/module_scanner'
