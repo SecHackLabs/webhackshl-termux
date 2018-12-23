@@ -68,8 +68,8 @@ def updatetools(DISTRO):
         os.system("pkg update")
         cAmarillo("Actualizando Herramientas del sistema...")
         installcorrect=os.system("pkg install util-linux perl clang  nmap make ruby ruby-dev libxslt libxslt-dev git curl tor python python2 libyaml-dev libandroid-glob libandroid-glob-dev libffi-dev \
-         && pip3 install fierce sqlmap -U \
-         && pip2 install requests flask -U \
+         && pip3 install fierce -U \
+         && pip2 install requests flask sqlmap -U \
          && cpan -Ti Net::IP Net::DNS Net::Netmask XML::Writer String::Random \
          && gem install wpscan \
          && cd $PWD/modules/tplmap/ && git pull \
@@ -106,8 +106,8 @@ def installall(DISTRO):
         cAmarillo("Instalando lo necesario en el sistema...")
         correctinstall=os.system("pkg install util-linux perl clang nmap make ruby ruby-dev libxslt libxslt-dev git curl tor python2 python libyaml-dev libandroid-glob libandroid-glob-dev libffi-dev \
                 && touch $PREFIX/etc/hosts \
-                && pip3 install fierce sqlmap \
-                && pip2 install requests flask \
+                && pip3 install fierce \
+                && pip2 install requests flask sqlmap \
                 && cpan -Ti Net::IP Net::DNS Net::Netmask XML::Writer String::Random \
                 && gem install wpscan \
                 && cd modules/tplmap/ && git pull \
