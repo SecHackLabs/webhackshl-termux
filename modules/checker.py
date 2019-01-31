@@ -151,7 +151,6 @@ def checklogs():
         else:
             os.mkdir(logsdir+dtool)
             pass
-    cVerde("Directorios creados.")
 
 #Revisamos que TOR esté corriendo en el sistema y si no lo está, lo iniciamos.
 def dtor():
