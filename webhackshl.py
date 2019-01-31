@@ -117,6 +117,8 @@ try:
     checker.gems()
     print ""
     checker.dtor()
+    print ""
+    checker.checklogs()
     def webframework():
         print ""
         checker.cAmarillo("""Selecciona una de las siguientes opciones.""")
