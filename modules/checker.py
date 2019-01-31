@@ -144,12 +144,15 @@ def check():
             print "Distribución desconocida, saliendo."
 
 def checklogs():
-    toolsdirs=['whatweb', 'nikto', 'nmap-full', 'nmap-rapido', 'nmap-servhost', 'nmap-serviciosver', 'nmap-puertorango', 'nmap-so-host', 'dnsenum', 'bypass']
-    for dtool in toolsdirs:
-        if os.path.isdir(logsdir+dtool):
-            continue
-        else:
-            os.mkdir(logsdir+dtool)
+    if logsdir:
+        cVerde("El directorio de logs existe.")
+    else:
+        cRojo("Los directorios de archivos log no existen, se procederá a crearlos.")
+        toolsdirs=['whatweb', 'nikto', 'nmap-full', 'nmap-rapido', 'nmap-servhost', 'nmap-serviciosver', 'nmap-puertorango', 'nmap-so-host', 'dnsenum', 'bypass']
+        for dtool in toolsdirs:
+            createdirs=os.mkdir(logsdir+dtool)
+            pass
+    cVerde("Directorios creados.")
 
 #Revisamos que TOR esté corriendo en el sistema y si no lo está, lo iniciamos.
 def dtor():
