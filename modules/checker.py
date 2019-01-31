@@ -147,10 +147,9 @@ def checklogs():
     toolsdirs=['whatweb', 'nikto', 'nmap-full', 'nmap-rapido', 'nmap-servhost', 'nmap-serviciosver', 'nmap-puertorango', 'nmap-so-host', 'dnsenum', 'bypass']
     for dtool in toolsdirs:
         if os.path.isdir(logsdir+dtool):
-            pass
+            continue
         else:
             os.mkdir(logsdir+dtool)
-            pass
 
 #Revisamos que TOR esté corriendo en el sistema y si no lo está, lo iniciamos.
 def dtor():
