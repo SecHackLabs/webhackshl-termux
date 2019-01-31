@@ -147,7 +147,7 @@ def checklogs():
     toolsdirs=['whatweb', 'nikto', 'nmap-full', 'nmap-rapido', 'nmap-servhost', 'nmap-serviciosver', 'nmap-puertorango', 'nmap-so-host', 'dnsenum', 'bypass']
     for dtool in toolsdirs:
         if os.path.isdir(logsdir+dtool):
-            continue
+            pass
         else:
             os.mkdir(logsdir+dtool)
             pass
