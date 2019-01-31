@@ -18,9 +18,10 @@ import subprocess
 import os
 
 #Definición de directorios de trabajo para Termux
-global PREFIX, HOME
+global PREFIX, HOME, ADIR
 PREFIX="/data/data/com.termux/files/usr"
 HOME="/data/data/com.termux/files/home"
+ADIR=os.getcwd()
 
 #Chequeo de las herramientas necesarias en el sistema
 isjohn=os.path.isfile(PREFIX+"/bin/applets/false")
@@ -35,6 +36,7 @@ iswhatw=os.path.isfile(HOME+"/.whatweb/whatweb")
 iswp=os.path.isfile(PREFIX+"/bin/wpscan")
 iscurl=os.path.isfile(PREFIX+"/bin/curl")
 isgit=os.path.isfile(PREFIX+"/bin/git")
+logsdir=os.path.isdir(ADIR+"/modules/logs/")
 
 #Chequeo de archivos comunes para definir la distribución
 def distribucion():
@@ -140,6 +142,17 @@ def check():
             installall(DISTRO)
         else:
             print "Distribución desconocida, saliendo."
+
+def checklogs():
+    if logsdir:
+        cVerde("El directorio de logs existe.")
+    else:
+        cRojo("Los directorios de archivos log no existen, se procederá a crearlos.")
+        toolsdirs=['whatweb', 'nikto', 'nmap-full', 'nmap-rapido', 'nmap-servhost', 'nmap-serviciosver', 'nmap-puertorango', 'nmap-so-host', 'dnsenum', 'bypass']
+        for dtool in toolsdirs:
+            createdirs=os.mkdir(logsdir+dtool)
+            cVerde("Directorios creados.")
+            pass
 
 #Revisamos que TOR esté corriendo en el sistema y si no lo está, lo iniciamos.
 def dtor():
