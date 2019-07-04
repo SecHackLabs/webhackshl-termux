@@ -16,7 +16,7 @@ Sigue los pasos que encontrarás en https://securityhacklabs.net/articulo/nuestr
 # Uso de la herramienta
 Teclee en la terminal de termux:</br>
 
-~$ git clone https://gitlab.com/sechacklabs/webhackshl-termux.git</br>
+~$ git clone https://github.com/sechacklabs/webhackshl-termux.git</br>
 ~$ cd webhackshl-termux</br>
 ~$ python2 webhackshl.py<br>
 
